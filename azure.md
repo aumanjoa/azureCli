@@ -23,3 +23,9 @@ list all vms
 ```bash
 az vm list --output table
 ```
+
+dealocate (shutdown for no pay)
+```bash
+az vm deallocate --name MyUbuntuVm --resource-group MYRESOURCEGROUP
+```
+
