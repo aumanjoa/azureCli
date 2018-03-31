@@ -29,6 +29,9 @@ dealocate (shutdown for no pay)
 az vm deallocate --name MyUbuntuVm --resource-group MYRESOURCEGROUP
 ```
 
+create vsts agent in container instance
 ```bash
-az container create -g MyResourceGroup --name vstsagent --image microsoft/vsts-agent:ubuntu-16.04-standard -e VSTS_ACCOUNT=joausandbox VSTS_TOKEN=vfmvlhwbeqq2ilbvinhxl5nfpb7u5a246y64i33q4nmuywmeu63q VSTS_AGENT='$(hostname)-agent' VSTS_POOL=mypool
+az group create --name vstsagent --location westeurope
+
+az container create -g vstsagent --name vstsagent --image microsoft/vsts-agent:ubuntu-16.04-standard -e VSTS_ACCOUNT=joausandbox VSTS_TOKEN=vfmvlhwbeqq2ilbvinhxl5nfpb7u5a246y64i33q4nmuywmeu63q VSTS_AGENT='$(hostname)-agent' VSTS_POOL=mypool
 ```
